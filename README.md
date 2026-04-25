@@ -13,7 +13,7 @@ The main purpose of the repository is to show the correct way to print "Hello, w
 - [x] "e" - Fortran
 - [x] "l" - Rust
 - [x] "l" - Zig
-- [ ] "o"
+- [x] "o" - Go
 - [ ] ","
 - [ ] " "
 - [ ] "w"

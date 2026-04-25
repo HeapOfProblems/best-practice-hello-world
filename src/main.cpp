@@ -3,6 +3,7 @@ extern "C" {
   void print_e2();
   void print_l3();
   void print_l4();
+  void print_o5();
 }
 
 int main() {
@@ -10,5 +11,6 @@ int main() {
   print_e2();
   print_l3();
   print_l4();
+  print_o5();
   return 0;
 }
