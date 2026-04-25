@@ -1,3 +1,7 @@
+<div align="center">
+    <img src="https://crocobystats.vercel.app/hello_world.svg" alt="binary in the terminal">
+</div>
+
 # Best Practice Hello World
 In the world of software engineering, **`Hello World`** is more than just a string printed to a terminal.
 It's like a greeting of programmer to the world. So becoming a new organization, **Heap of problems** created this repository to greet with the whole Open Source world.
