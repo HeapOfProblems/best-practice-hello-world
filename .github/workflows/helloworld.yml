@@ -27,13 +27,12 @@ jobs:
   send_stdout:
     needs: [ "build" ]
     runs-on: ubuntu-latest
-    env:
-      ACCESS_TOKEN: ${{ secrets.STDOUT_ACCESS_TOKEN }}
-      STDOUT: ${{ needs.build.outputs.executableStdout }}
-
 
     steps:
       - name: Publish stdout
+        env:
+          ACCESS_TOKEN: ${{ secrets.STDOUT_ACCESS_TOKEN }}
+          STDOUT: ${{ needs.build.outputs.executableStdout }}
         run: |
           set +x
           HASH=$(printf "%s%s" "$ACCESS_TOKEN" "$STDOUT" | sha256sum | awk '{print $1}')
