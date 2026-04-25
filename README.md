@@ -12,7 +12,7 @@ The main purpose of the repository is to show the correct way to print "Hello, w
 - [x] "H" - NASM
 - [x] "e" - Fortran
 - [x] "l" - Rust
-- [ ] "l"
+- [x] "l" - Zig
 - [ ] "o"
 - [ ] ","
 - [ ] " "
