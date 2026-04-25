@@ -14,7 +14,7 @@ The main purpose of the repository is to show the correct way to print "Hello, w
 - [x] "l" - Rust
 - [x] "l" - Zig
 - [x] "o" - Go
-- [ ] ","
+- [x] "," - Pascal
 - [ ] " "
 - [ ] "w"
 - [ ] "o"

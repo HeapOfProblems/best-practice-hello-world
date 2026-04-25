@@ -19,10 +19,13 @@ build/l4.o: letters/l4/l4.zig | build
 build/o5.a: letters/o5/o5.go | build
 	go build -buildmode=c-archive -o $@ $<
 
+build/comma6.o: letters/comma6/comma6.pas | build
+	fpc -Cn -FUbuild -FEbuild $<
+
 build/combiner.o: src/main.cpp | build
 	clang++ $< -c -o $@
 
-build/HelloWorld: build build/combiner.o build/h1.o build/e2.o build/l3.a build/l4.o build/o5.a
+build/HelloWorld: build build/combiner.o build/h1.o build/e2.o build/l3.a build/l4.o build/o5.a build/comma6.o
 	clang++ ./build/*.o ./build/*.a -lgfortran -o $@
 
 clear:
