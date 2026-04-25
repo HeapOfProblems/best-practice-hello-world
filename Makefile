@@ -10,11 +10,14 @@ build/h1.o: letters/h1/h1.asm | build
 build/e2.o: letters/e2/e2.f90 | build
 	gfortran -c $< -o $@
 
+build/l3.a: letters/l3/l3.rs | build
+	rustc --crate-type=staticlib $< -o $@
+
 build/combiner.o: src/main.cpp | build
 	clang++ $< -c -o $@
 
-build/HelloWorld: build build/combiner.o build/h1.o build/e2.o
-	clang++ ./build/*.o -lgfortran -o $@
+build/HelloWorld: build build/combiner.o build/h1.o build/e2.o build/l3.a
+	clang++ ./build/*.o ./build/*.a -lgfortran -o $@
 
 clear:
 	- rm -rf ./build

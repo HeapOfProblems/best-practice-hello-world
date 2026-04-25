@@ -10,8 +10,8 @@ The main purpose of the repository is to show the correct way to print "Hello, w
 
 ## 📋 Progress
 - [x] "H" - NASM
-- [ ] "e"
-- [ ] "l"
+- [x] "e" - Fortran
+- [x] "l" - Rust
 - [ ] "l"
 - [ ] "o"
 - [ ] ","
