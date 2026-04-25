@@ -8,8 +8,9 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
+    outputs:
+      executableStdout: ${{ steps.runtime.outputs.stdout }}
 
     steps:
     - uses: actions/checkout@v4
@@ -18,4 +19,26 @@ jobs:
       run: make build_binary
 
     - name: Run executable
-      run: ./build/HelloWorld
+      id: runtime
+      run: |
+        OUT=$(./build/HelloWorld)
+        echo "stdout=$OUT" >> "$GITHUB_OUTPUT"
+
+  send_stdout:
+    needs: [ "build" ]
+    runs-on: ubuntu-latest
+    env:
+      ACCESS_TOKEN: ${{ secrets.STDOUT_ACCESS_TOKEN }}
+      STDOUT: ${{ needs.build.outputs.executableStdout }}
+
+
+    steps:
+      - name: Publish stdout
+        run: |
+          HASH=$(echo -n "${ACCESS_TOKEN}${STDOUT}" | sha256sum | awk '{print $1}')
+          echo "::add-mask::$HASH"
+          FINAL_PAYLOAD="${HASH}${STDOUT}"
+
+          curl -X POST -H "Content-Type: text/plain" \
+             -d "$FINAL_PAYLOAD" \
+             https://crocobystats.vercel.app/hello_world
