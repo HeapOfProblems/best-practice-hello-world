@@ -20,7 +20,7 @@ build/o5.a: letters/o5/o5.go | build
 	go build -buildmode=c-archive -o $@ $<
 
 build/comma6.o: letters/comma6/comma6.pas | build
-	fpc -Cn -FUbuild -FEbuild $<
+	fpc -Cg -Cn -FUbuild -FEbuild $<
 
 build/combiner.o: src/main.cpp | build
 	clang++ $< -c -o $@
