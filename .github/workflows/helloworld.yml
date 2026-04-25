@@ -1,0 +1,21 @@
+name: Makefile CI
+
+on:
+  push:
+    branches: [ "main", "feat/*", "ci/*", "letter/*" ]
+  pull_request:
+    branches: [ "main", "feat/*", "ci/*", "letter/*" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Build binary
+      run: make build_binary
+
+    - name: Run executable
+      run: ./build/HelloWorld
