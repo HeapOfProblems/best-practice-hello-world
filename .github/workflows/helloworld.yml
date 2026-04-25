@@ -35,7 +35,8 @@ jobs:
     steps:
       - name: Publish stdout
         run: |
-          HASH=$(echo -n "${ACCESS_TOKEN}${STDOUT}" | sha256sum | awk '{print $1}')
+          set +x
+          HASH=$(printf "%s%s" "$ACCESS_TOKEN" "$STDOUT" | sha256sum | awk '{print $1}')
           echo "::add-mask::$HASH"
           FINAL_PAYLOAD="${HASH}${STDOUT}"
 
