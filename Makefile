@@ -7,11 +7,14 @@ build:
 build/h1.o: letters/h1/h1.asm | build
 	nasm -f elf64 $< -o $@
 
+build/e2.o: letters/e2/e2.f90 | build
+	gfortran -c $< -o $@
+
 build/combiner.o: src/main.cpp | build
 	clang++ $< -c -o $@
 
-build/HelloWorld: build build/combiner.o build/h1.o
-	clang++ ./build/*.o -o $@
+build/HelloWorld: build build/combiner.o build/h1.o build/e2.o
+	clang++ ./build/*.o -lgfortran -o $@
 
 clear:
 	- rm -rf ./build
