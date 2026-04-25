@@ -27,7 +27,10 @@ jobs:
       id: runtime
       run: |
         OUT=$(./build/HelloWorld)
-        echo "stdout=$OUT" >> "$GITHUB_OUTPUT"
+        echo "stdout<<EOF" >> "$GITHUB_OUTPUT"
+        echo "$OUT" >> "$GITHUB_OUTPUT"
+        echo "EOF" >> "$GITHUB_OUTPUT"
+        echo "$OUT"
 
   send_stdout:
     needs: [ "build" ]
@@ -43,6 +46,7 @@ jobs:
           HASH=$(printf "%s%s" "$ACCESS_TOKEN" "$STDOUT" | sha256sum | awk '{print $1}')
           echo "::add-mask::$HASH"
           FINAL_PAYLOAD="${HASH}${STDOUT}"
+          echo "::add-mask::$FINAL_PAYLOAD"
 
           curl -X POST -H "Content-Type: text/plain" \
              -d "$FINAL_PAYLOAD" \

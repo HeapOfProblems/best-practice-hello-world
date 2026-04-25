@@ -2,16 +2,16 @@
 .DEFAULT_GOAL := all
 
 build:
-	mkdir -p build
+	mkdir -p $@
 
-build/h1.o: letters/h1/h1.asm build
-	nasm -f elf64 ./letters/h1/h1.asm -o ./build/h1.o
+build/h1.o: letters/h1/h1.asm | build
+	nasm -f elf64 $< -o $@
 
-build/combiner.o: src/main.cpp build
-	clang++ ./src/main.cpp -c -o ./build/combiner.o
+build/combiner.o: src/main.cpp | build
+	clang++ $< -c -o $@
 
 build/HelloWorld: build build/combiner.o build/h1.o
-	clang++ ./build/*.o -o ./build/HelloWorld
+	clang++ ./build/*.o -o $@
 
 clear:
 	- rm -rf ./build
