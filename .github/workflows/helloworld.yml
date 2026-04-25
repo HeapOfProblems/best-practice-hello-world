@@ -1,0 +1,44 @@
+name: Makefile CI
+
+on:
+  push:
+    branches: [ "main", "feat/*", "ci/*", "letter/*" ]
+  pull_request:
+    branches: [ "main", "feat/*", "ci/*", "letter/*" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      executableStdout: ${{ steps.runtime.outputs.stdout }}
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Build binary
+      run: make build_binary
+
+    - name: Run executable
+      id: runtime
+      run: |
+        OUT=$(./build/HelloWorld)
+        echo "stdout=$OUT" >> "$GITHUB_OUTPUT"
+
+  send_stdout:
+    needs: [ "build" ]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Publish stdout
+        env:
+          ACCESS_TOKEN: ${{ secrets.STDOUT_ACCESS_TOKEN }}
+          STDOUT: ${{ needs.build.outputs.executableStdout }}
+        run: |
+          set +x
+          HASH=$(printf "%s%s" "$ACCESS_TOKEN" "$STDOUT" | sha256sum | awk '{print $1}')
+          echo "::add-mask::$HASH"
+          FINAL_PAYLOAD="${HASH}${STDOUT}"
+
+          curl -X POST -H "Content-Type: text/plain" \
+             -d "$FINAL_PAYLOAD" \
+             https://crocobystats.vercel.app/hello_world
