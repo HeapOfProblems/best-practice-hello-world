@@ -9,7 +9,7 @@ It's like a greeting of programmer to the world. So becoming a new organization,
 The main purpose of the repository is to show the correct way to print "Hello, world!" into the terminal.
 
 ## 📋 Progress
-- [ ] "H"
+- [x] "H" - NASM
 - [ ] "e"
 - [ ] "l"
 - [ ] "l"
@@ -22,7 +22,7 @@ The main purpose of the repository is to show the correct way to print "Hello, w
 - [ ] "l"
 - [ ] "d"
 - [ ] "!"
-- [ ] Combination
+- [x] Combination - C++
 
 ## ⚖️ License
 This project is released under the **Unlicense**. 
