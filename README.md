@@ -15,8 +15,8 @@ The main purpose of the repository is to show the correct way to print "Hello, w
 1. [x] "l" - Zig
 1. [x] "o" - Go
 1. [x] "," - Pascal
-1. [ ] " " - Ada
-1. [ ] "w"
+1. [x] " " - Ada
+1. [x] "w" - Kotlin
 1. [ ] "o"
 1. [ ] "r"
 1. [ ] "l"

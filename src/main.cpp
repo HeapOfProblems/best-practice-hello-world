@@ -9,18 +9,21 @@ extern "C" {
   void print_o5();
   void print_comma6();
   void print_space7();
+  void print_w8();
 }
 
 int main() {
+  adainit();
+
   print_h1();
   print_e2();
   print_l3();
   print_l4();
   print_o5();
   print_comma6();
-
-  adainit();
   print_space7();
+  print_w8();
+
   adafinal();
   return 0;
 }

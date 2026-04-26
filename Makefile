@@ -31,10 +31,13 @@ build/ada_binder.o: build/print_space.ali | build/space7.o build
 	gcc -c b~print_space.adb -o build/b~print_space.o
 	mv build/b~print_space.o $@
 
+build/w8.a: letters/w8/w8.kt | build
+	kotlinc-native $< -produce static -o build/w8
+
 build/combiner.o: src/main.cpp | build
 	clang++ $< -c -o $@
 
-build/HelloWorld: build build/combiner.o build/h1.o build/e2.o build/l3.a build/l4.o build/o5.a build/comma6.o build/space7.o build/ada_binder.o
+build/HelloWorld: build build/combiner.o build/h1.o build/e2.o build/l3.a build/l4.o build/o5.a build/comma6.o build/space7.o build/ada_binder.o build/w8.a
 	clang++ ./build/*.o ./build/*.a -lgfortran -lgnat -o $@
 
 clear:

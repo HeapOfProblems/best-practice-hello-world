@@ -25,6 +25,14 @@ jobs:
       with:
         version: 0.15.2
 
+    - name: Setup Kotlin/Native
+      run: |
+        KOTLIN_NATIVE_VERSION=2.3.21
+        curl -L -o kotlin-native.tar.gz \
+          "https://github.com/JetBrains/kotlin/releases/download/v${KOTLIN_NATIVE_VERSION}/kotlin-native-prebuilt-linux-x86_64-${KOTLIN_NATIVE_VERSION}.tar.gz"
+        tar -xzf kotlin-native.tar.gz
+        echo "$PWD/kotlin-native-prebuilt-linux-x86_64-${KOTLIN_NATIVE_VERSION}/bin" >> "$GITHUB_PATH"
+
     - name: Build binary
       run: make build_binary
 
