@@ -1,4 +1,4 @@
-extern(C) void print_r() {
+extern(C) void print_r10() {
     import core.stdc.stdio;
     printf("r");
 }

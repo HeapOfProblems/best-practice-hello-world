@@ -1,0 +1,6 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. print_l11.
+
+       PROCEDURE DIVISION.
+           DISPLAY "l" WITH NO ADVANCING.
+           GOBACK.

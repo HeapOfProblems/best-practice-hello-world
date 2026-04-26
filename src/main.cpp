@@ -1,6 +1,7 @@
 extern "C" {
   void adainit();
   void adafinal();
+  void cob_init();
 
   void print_h1();
   void print_e2();
@@ -12,9 +13,11 @@ extern "C" {
   void print_w8();
   void print_o9();
   void print_r10();
+  void print_l11();
 }
 
 int main() {
+  cob_init();
   adainit();
 
   print_h1();
@@ -27,6 +30,7 @@ int main() {
   print_w8();
   print_o9();
   print_r10();
+  print_l11();
 
   adafinal();
   return 0;
