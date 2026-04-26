@@ -1,13 +1,18 @@
 global print_h1
 
-section .rodata
-  letter_h db "H"
-
 section .text
 print_h1:
+    push rbp
+    mov rbp, rsp
+    sub rsp, 16
+    mov byte [rbp - 8], "H"
+
     mov rax, 1
     mov rdi, 1
-    lea rsi, [rel letter_h]
+    lea rsi, [rbp - 8]
     mov rdx, 1
     syscall
+
+    mov rsp, rbp
+    pop rbp
     ret
