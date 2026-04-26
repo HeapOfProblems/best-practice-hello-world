@@ -46,11 +46,14 @@ build/l11.o: letters/l11/l11.cob | build
 build/d12.o: letters/d12/d12.ml | build
 	ocamlopt -output-complete-obj -o $@ $<
 
+build/exclamation13.o: letters/exclamation13/exclamation13.c | build
+	clang $< -c -o $@ -std=c23 $$(python3-config --cflags)
+
 build/combiner.o: src/main.cpp | build
 	clang++ $< -c -o $@
 
-build/HelloWorld: build build/combiner.o build/h1.o build/e2.o build/l3.a build/l4.o build/o5.a build/comma6.o build/space7.o build/ada_binder.o build/w8.a build/o9.o build/r10.o build/l11.o build/d12.o
-	clang++ ./build/*.o ./build/*.a -lgfortran -lgnat -lcob -L$(shell ocamlc -where) -lasmrun -lm -ldl -lpthread -o $@
+build/HelloWorld: build build/combiner.o build/h1.o build/e2.o build/l3.a build/l4.o build/o5.a build/comma6.o build/space7.o build/ada_binder.o build/w8.a build/o9.o build/r10.o build/l11.o build/d12.o build/exclamation13.o
+	clang++ ./build/*.o ./build/*.a -lgfortran -lgnat -lcob -L$(shell ocamlc -where) -lasmrun -lm -ldl -lpthread -o $@ $$(python3-config --ldflags --libs --embed)
 
 clear:
 	- rm -rf ./build

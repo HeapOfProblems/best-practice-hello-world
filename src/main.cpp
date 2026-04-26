@@ -17,6 +17,7 @@ extern "C" {
   void print_o9();
   void print_r10();
   void print_l11();
+  void print_exclamation13();
 }
 
 int main() {
@@ -34,10 +35,13 @@ int main() {
   print_o9();
   print_r10();
   print_l11();
+
   char *argv[] = {(char *)"HelloWorld", nullptr};
   caml_startup(argv);
-
   caml_shutdown();
+
+  print_exclamation13();
+
   adafinal();
   return 0;
 }
