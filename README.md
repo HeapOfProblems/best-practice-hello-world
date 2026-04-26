@@ -3,10 +3,27 @@
 </div>
 
 # Best Practice Hello World
-In the world of software engineering, **`Hello World`** is more than just a string printed to a terminal.
-It's like a greeting of programmer to the world. So becoming a new organization, **Heap of problems** created this repository to greet with the whole Open Source world.
+In the world of software engineering, **Hello World** is more than just a string printed to a terminal;
+it is a programmer’s first greeting to the universe. 
+As a newly formed organization, Heap of Problems created this repository to greet the entire Open Source community in the most "sophisticated" way possible.
 
-The main purpose of the repository is to show the correct way to print "Hello, world!" into the terminal.
+The main purpose of this repository is to demonstrate the only correct and stable way to print "Hello, world!" to your terminal.
+
+### 👍 Advantages
+- ❌ Your `print("Hello, world!")` probably uses only one programming language.
+
+    ✅ Our project uses the most significant programming languages in history just to show "Hello, world!" in your Linux terminal.
+
+- ❌ Your `print("Hello, world!")` probably cross-platform.
+
+    ✅ Our project supports only **Linux x86** because of ASM. It's not a problem, it's a feature for Linux popularization.
+
+- ❌ Your `print("Hello, world!")` probably takes less than 1 Mb.
+
+    ✅ Our project bundles multiple runtimes and garbage collectors to ensure "Hello, world!" runs in the most "luxurious" conditions possible. Current binary size: 13 MB.
+
+### 👎 Disadvantages
+- None.
 
 ## 😜 Programming languages
 1. `"H"` - NASM by [@dadencukillia](https://github.com/dadencukillia)
@@ -23,6 +40,11 @@ The main purpose of the repository is to show the correct way to print "Hello, w
 1. `"d"` - OCaml by [@FortiBrine](https://github.com/FortiBrine)
 1. `"!"` - Python by [@dadencukillia](https://github.com/dadencukillia)
 1. `ABI combiner` - C++
+
+## 📦 Prerequisites
+To build this masterpiece, your machine needs to be a museum of computer science. You will need:
+
+`nasm`, `gfortran`, `rustc`, `zig` (>=0.15.2), `go`, `fpc`, `gnat`, `kotlinc-native` (>=2.3.21), `clang` (>=20), `gdc`, `gnucobol`, `ocamlopt`, `python3`, and a very patient `clang++` (>=20).
 
 ## ⚖️ License
 This project is released under the **Unlicense**. 
