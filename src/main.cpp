@@ -10,6 +10,7 @@ extern "C" {
   void print_comma6();
   void print_space7();
   void print_w8();
+  void print_o9();
 }
 
 int main() {
@@ -23,6 +24,7 @@ int main() {
   print_comma6();
   print_space7();
   print_w8();
+  print_o9();
 
   adafinal();
   return 0;
