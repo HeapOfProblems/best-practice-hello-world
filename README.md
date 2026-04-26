@@ -9,20 +9,20 @@ It's like a greeting of programmer to the world. So becoming a new organization,
 The main purpose of the repository is to show the correct way to print "Hello, world!" into the terminal.
 
 ## 📋 Progress
-- [x] "H" - NASM
-- [x] "e" - Fortran
-- [x] "l" - Rust
-- [x] "l" - Zig
-- [x] "o" - Go
-- [x] "," - Pascal
-- [ ] " "
-- [ ] "w"
-- [ ] "o"
-- [ ] "r"
-- [ ] "l"
-- [ ] "d"
-- [ ] "!"
-- [x] Combination - C++
+1. [x] "H" - NASM
+1. [x] "e" - Fortran
+1. [x] "l" - Rust
+1. [x] "l" - Zig
+1. [x] "o" - Go
+1. [x] "," - Pascal
+1. [ ] " " - Ada
+1. [ ] "w"
+1. [ ] "o"
+1. [ ] "r"
+1. [ ] "l"
+1. [ ] "d"
+1. [ ] "!"
+1. [x] Combination - C++
 
 ## ⚖️ License
 This project is released under the **Unlicense**. 

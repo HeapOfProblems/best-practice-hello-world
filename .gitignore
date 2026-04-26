@@ -1,1 +1,4 @@
 build/
+
+b~*.adb
+b~*.ads

@@ -22,10 +22,19 @@ build/o5.a: letters/o5/o5.go | build
 build/comma6.o: letters/comma6/comma6.pas | build
 	fpc -Cg -Cn -FUbuild -FEbuild $<
 
+build/space7.o: letters/space7/print_space.adb letters/space7/print_space.ads | build
+	gcc -c -gnatp $< -o build/print_space.o
+	mv build/print_space.o $@
+
+build/ada_binder.o: build/print_space.ali | build/space7.o build
+	gnatbind -n $<
+	gcc -c b~print_space.adb -o build/b~print_space.o
+	mv build/b~print_space.o $@
+
 build/combiner.o: src/main.cpp | build
 	clang++ $< -c -o $@
 
-build/HelloWorld: build build/combiner.o build/h1.o build/e2.o build/l3.a build/l4.o build/o5.a build/comma6.o
+build/HelloWorld: build build/combiner.o build/h1.o build/e2.o build/l3.a build/l4.o build/o5.a build/comma6.o build/space7.o build/ada_binder.o
 	clang++ ./build/*.o ./build/*.a -lgfortran -o $@
 
 clear:
