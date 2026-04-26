@@ -8,21 +8,21 @@ It's like a greeting of programmer to the world. So becoming a new organization,
 
 The main purpose of the repository is to show the correct way to print "Hello, world!" into the terminal.
 
-## 📋 Progress
-1. [x] "H" - NASM
-1. [x] "e" - Fortran
-1. [x] "l" - Rust
-1. [x] "l" - Zig
-1. [x] "o" - Go
-1. [x] "," - Pascal
-1. [x] " " - Ada
-1. [x] "w" - Kotlin
-1. [x] "o" - C
-1. [x] "r" - D
-1. [x] "l" - COBOL
-1. [x] "d" - OCaml
-1. [x] "!" - Python
-1. [x] Combination - C++
+## 😜 Programming languages
+1. `"H"` - NASM by [@dadencukillia](https://github.com/dadencukillia)
+1. `"e"` - Fortran by [@FortiBrine](https://github.com/FortiBrine)
+1. `"l"` - Rust by [@dadencukillia](https://github.com/dadencukillia)
+1. `"l"` - Zig by [@FortiBrine](https://github.com/FortiBrine)
+1. `"o"` - Go by [@dadencukillia](https://github.com/dadencukillia)
+1. `","` - Pascal by [@FortiBrine](https://github.com/FortiBrine)
+1. `" "` - Ada by [@dadencukillia](https://github.com/dadencukillia)
+1. `"w"` - Kotlin by [@FortiBrine](https://github.com/FortiBrine)
+1. `"o"` - C by [@dadencukillia](https://github.com/dadencukillia)
+1. `"r"` - D by [@FortiBrine](https://github.com/FortiBrine)
+1. `"l"` - COBOL by [@dadencukillia](https://github.com/dadencukillia)
+1. `"d"` - OCaml by [@FortiBrine](https://github.com/FortiBrine)
+1. `"!"` - Python by [@dadencukillia](https://github.com/dadencukillia)
+1. `ABI combiner` - C++
 
 ## ⚖️ License
 This project is released under the **Unlicense**. 
