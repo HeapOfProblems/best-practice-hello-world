@@ -11,6 +11,7 @@ extern "C" {
   void print_space7();
   void print_w8();
   void print_o9();
+  void print_r10();
 }
 
 int main() {
@@ -25,6 +26,7 @@ int main() {
   print_space7();
   print_w8();
   print_o9();
+  print_r10();
 
   adafinal();
   return 0;
