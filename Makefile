@@ -1,4 +1,4 @@
-.PHONY: clear build_binary run all
+.PHONY: clear build_binary run info all
 .DEFAULT_GOAL := all
 
 build:
@@ -66,5 +66,12 @@ run:
 	@./build/HelloWorld
 	@echo ""
 	@echo "✅ Execution finished."
+
+info:
+	@echo "* 🛍️ The shared dependencies:"
+	@ldd ./build/HelloWorld
+	@echo ""
+	@echo "* 💿 The binary size:"
+	@du -h ./build/HelloWorld
 
 all: clear build_binary run
