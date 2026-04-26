@@ -35,7 +35,7 @@ build/combiner.o: src/main.cpp | build
 	clang++ $< -c -o $@
 
 build/HelloWorld: build build/combiner.o build/h1.o build/e2.o build/l3.a build/l4.o build/o5.a build/comma6.o build/space7.o build/ada_binder.o
-	clang++ ./build/*.o ./build/*.a -lgfortran -o $@
+	clang++ ./build/*.o ./build/*.a -lgfortran -lgnat -o $@
 
 clear:
 	- rm -rf ./build
