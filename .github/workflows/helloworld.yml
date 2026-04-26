@@ -47,30 +47,10 @@ jobs:
       run: make build_binary
 
     - name: Run executable
-      id: runtime
-      run: |
-        OUT=$(./build/HelloWorld)
-        echo "stdout<<EOF" >> "$GITHUB_OUTPUT"
-        echo "$OUT" >> "$GITHUB_OUTPUT"
-        echo "EOF" >> "$GITHUB_OUTPUT"
-        echo "$OUT"
+      run: ./build/HelloWorld
 
-  send_stdout:
-    needs: [ "build" ]
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Publish stdout
-        env:
-          ACCESS_TOKEN: ${{ secrets.STDOUT_ACCESS_TOKEN }}
-          STDOUT: ${{ needs.build.outputs.executableStdout }}
-        run: |
-          set +x
-          HASH=$(printf "%s%s" "$ACCESS_TOKEN" "$STDOUT" | sha256sum | awk '{print $1}')
-          echo "::add-mask::$HASH"
-          FINAL_PAYLOAD="${HASH}${STDOUT}"
-          echo "::add-mask::$FINAL_PAYLOAD"
-
-          curl -X POST -H "Content-Type: text/plain" \
-             -d "$FINAL_PAYLOAD" \
-             https://crocobystats.vercel.app/hello_world
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v7.0.1
+      with:
+        name: linux_x86
+        path: ./build/HelloWorld
