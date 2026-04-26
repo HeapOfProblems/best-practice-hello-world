@@ -29,11 +29,10 @@ build/space7.o: letters/space7/print_space.adb letters/space7/print_space.ads | 
 	mv build/print_space.o $@
 
 build/ada_binder.o: build/print_space.ali | build/space7.o build
-	cd build
 	gnatbind -n $<
 	gcc -c b~print_space.adb -o b~print_space.o
-	cd ..
-	mv build/b~print_space.o $@
+	mv b~print_space.o $@
+	rm b~print_space.ali
 
 build/w8.a: letters/w8/w8.kt | build
 	kotlinc-native -produce static -o build/w8 $<
