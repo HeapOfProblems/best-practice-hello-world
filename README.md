@@ -20,7 +20,7 @@ The main purpose of the repository is to show the correct way to print "Hello, w
 1. [x] "o" - C
 1. [x] "r" - D
 1. [x] "l" - COBOL
-1. [ ] "d"
+1. [x] "d" - OCaml
 1. [ ] "!"
 1. [x] Combination - C++
 

@@ -18,7 +18,7 @@ jobs:
     - name: Setup environment
       run: |
         sudo apt-get update
-        sudo apt-get install -y nasm fp-compiler gnat ldc gnucobol
+        sudo apt-get install -y nasm fp-compiler gnat ldc gnucobol ocaml-nox
 
     - name: Setup Zig
       uses: mlugg/setup-zig@v2

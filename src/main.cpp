@@ -3,6 +3,9 @@ extern "C" {
   void adafinal();
   void cob_init();
 
+  void caml_startup(char **argv);
+  void caml_shutdown();
+
   void print_h1();
   void print_e2();
   void print_l3();
@@ -31,7 +34,10 @@ int main() {
   print_o9();
   print_r10();
   print_l11();
+  char *argv[] = {(char *)"HelloWorld", nullptr};
+  caml_startup(argv);
 
+  caml_shutdown();
   adafinal();
   return 0;
 }
